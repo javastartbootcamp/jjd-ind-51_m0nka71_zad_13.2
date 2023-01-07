@@ -24,14 +24,6 @@ public class Main {
         System.out.println("Podaj liczby");
         int userInput = scanner.nextInt();
 
-        try {
-            if (userInput <= 0) {
-                throw new IncorrectNumberException();
-            }
-        } catch (IncorrectNumberException e) {
-            System.err.println(e.getMessage());
-        }
-
         while (userInput > 0) {
             numbers.add(userInput);
             userInput = scanner.nextInt();
@@ -53,10 +45,10 @@ public class Main {
     public void sumAndPrintNumbers(List<Integer> numbers) {
         StringBuilder sb = new StringBuilder();
         int sum = 0;
-        for (int i = 0; i < numbers.size(); i++) {
-            sum += numbers.get(i);
-            sb.append(numbers.get(i));
-            if (numbers.size() > 0) {
+        for (Integer number : numbers) {
+            sum += number;
+            sb.append(number);
+            if (sb.length() > 0) {
                 sb.append(" + ");
             }
         }
