@@ -44,7 +44,7 @@ public class Main {
         StringBuilder sb = new StringBuilder();
         for (int i = numbers.size() - 1; i >= 0; i--) {
             sb.append(numbers.get(i));
-            sb.append(",");
+            sb.append(", ");
         }
         sb.deleteCharAt(sb.length() - 1);
         System.out.print(sb);
@@ -57,10 +57,10 @@ public class Main {
             sum += numbers.get(i);
             sb.append(numbers.get(i));
             if (numbers.size() > 0) {
-                sb.append("+");
+                sb.append(" + ");
             }
         }
-        sb.replace(sb.length() - 1, sb.length(), "=");
+        sb.replace(sb.length() - 1, sb.length(), " = ");
         sb.append(sum);
         System.out.print(sb + "\n");
     }
