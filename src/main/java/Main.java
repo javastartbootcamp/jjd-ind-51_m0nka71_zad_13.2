@@ -38,21 +38,22 @@ public class Main {
             sb.append(numbers.get(i));
             sb.append(", ");
         }
-        sb.deleteCharAt(sb.length() - 1);
+        sb.deleteCharAt(sb.length() - 2);
         System.out.print(sb);
     }
 
     public void sumAndPrintNumbers(List<Integer> numbers) {
         StringBuilder sb = new StringBuilder();
         int sum = 0;
-        for (Integer number : numbers) {
+        for (int i = 0; i < numbers.size(); i++) {
+            Integer number = numbers.get(i);
             sum += number;
             sb.append(number);
-            if (sb.length() > 0) {
+            if (i < numbers.size() - 1) {
                 sb.append(" + ");
             }
         }
-        sb.replace(sb.length() - 1, sb.length(), " = ");
+        sb.append(" = ");
         sb.append(sum);
         System.out.print(sb + "\n");
     }
